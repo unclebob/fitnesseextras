@@ -1,0 +1,9 @@
+Some plugins and extra responders that we have found useful.
+
+RssBlogResponderPlugin -- RSS for blog rather than wiki
+blogPlugin -- Treat a wiki page like a blog page, and provide comments
+contentFilter -- Catch link farmers.
+linuxPamAuth  -- Use PAM for authorization.
+releasesPlugin -- We use this on fitnesse.org to show releases.
+wikimail -- Send mail to the wiki.
+
