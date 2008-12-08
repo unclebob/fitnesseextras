@@ -1,0 +1,38 @@
+<project name="RssBlogResponderPlugin" basedir="." default="jar">
+
+  <property name="src.dir" value="src"/>
+  <property name="classes.dir" value="classes"/>
+  <property name="lib" location="lib"/>
+
+  <path id='classpath'>
+    <pathelement path="classes"/>
+    <fileset dir="lib">
+      <include name="**/*.jar"/>
+    </fileset>
+    <pathelement path="../FitNesse20050405/classes"/>
+  </path>
+
+
+  <target name="clean" description="Delete all generated files">
+    <delete dir="${classes.dir}" failonerror="false"/>
+    <delete file="${ant.project.name}.jar"/>
+  </target>
+
+  <target name="compile" description="Compiles the Task" depends="clean">
+    <mkdir dir="${classes.dir}"/>
+    <mkdir dir="lib"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}"
+           classpathref="classpath"/>
+  </target>
+
+  <target name="jar" description="rebuilds and creates jar" depends="compile">
+    <jar destfile="${ant.project.name}.jar" basedir="${classes.dir}"/>
+  </target>
+
+  <target name="jarNoRecompile"
+          description="JARs the classes, but does not recompile them.">
+    <jar destfile="${ant.project.name}.jar" basedir="${classes.dir}"/>
+  </target>
+
+
+</project>

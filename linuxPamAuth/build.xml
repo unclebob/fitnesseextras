@@ -1,0 +1,57 @@
+<project name="linuxpam" default="build" basedir=".">
+	<description>
+		Add Linux style authentication to FitNesse
+	</description>
+
+	<property name="src" location="src"/>
+	<property name="classes" location="classes"/>
+	<property name="lib" location="lib"/>
+
+	<path id='classpath'>
+		<pathelement path="${classes}"/>
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="build" depends="clean, compile" description="clean, then compile the source"/>
+
+	<target name="jar" depends="build" description="generate the jar file" >
+		<delete file="linuxpam.jar"/>
+
+		<jar jarfile="linuxpam.jar" basedir="${classes}">
+			<include name="**/*.class"/>
+			<exclude name="**/*Test.class"/>
+			<exclude name="**/*TestSuite.class"/>
+			<manifest>
+				<attribute name="Built-By" value="Micah D. Martin"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source (make)">
+		<javac srcdir="${src}" destdir="${classes}" classpathref="classpath"/>
+	</target>
+
+	<target name="clean" description="delete everything in the classes directory" >
+		<mkdir dir="${classes}"/>
+		<delete includeemptydirs="yes">
+			<fileset dir="${classes}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<target name="test" depends="compile" description="run the unit tests">
+		<junit fork='true' haltonfailure='true'>
+			<classpath refid='classpath'/>
+			<formatter type="brief" usefile="false"/>
+			<test name='com.objectmentor.wikimail.AllTestSuite'/>
+		</junit>
+	</target>
+
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${classes}"/>
+	</target>
+
+</project>
+
