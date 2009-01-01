@@ -32,7 +32,9 @@ public class DownloadResponderTest extends RegexTestCase {
   public void testDownloading() throws Exception {
     Response response = doSimpleDownload();
 
-    String content = new MockResponseSender(response).sentData();
+    MockResponseSender mockResponseSender = new MockResponseSender();
+    mockResponseSender.doSending(response);
+    String content = mockResponseSender.sentData();
     assertSubString("package one", content);
   }
 

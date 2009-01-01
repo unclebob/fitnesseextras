@@ -1,2 +1,9 @@
 *.class
+*.iml
+*.ipr
+*.iws
+*.jar
+*.jar.old
+META-INF
+
 
