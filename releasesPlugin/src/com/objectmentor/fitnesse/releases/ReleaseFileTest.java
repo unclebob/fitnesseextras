@@ -1,9 +1,10 @@
 package com.objectmentor.fitnesse.releases;
 
-import fitnesse.util.FileUtil;
 import junit.framework.TestCase;
 
 import java.io.File;
+
+import util.FileUtil;
 
 public class ReleaseFileTest extends TestCase {
   private File file;

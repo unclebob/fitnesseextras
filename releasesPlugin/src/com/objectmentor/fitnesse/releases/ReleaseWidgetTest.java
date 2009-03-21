@@ -1,11 +1,11 @@
 package com.objectmentor.fitnesse.releases;
 
-import fitnesse.util.FileUtil;
 import fitnesse.wiki.InMemoryPage;
 import fitnesse.wiki.WikiPage;
 import fitnesse.wikitext.widgets.MockWidgetRoot;
 import fitnesse.wikitext.widgets.WidgetRoot;
 import fitnesse.wikitext.widgets.WidgetTestCase;
+import util.FileUtil;
 
 public class ReleaseWidgetTest extends WidgetTestCase {
   private WikiPage page;

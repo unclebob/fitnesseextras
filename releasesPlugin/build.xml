@@ -9,6 +9,7 @@
 
   <path id='classpath'>
     <pathelement path="${classes}"/>
+    <pathelement path="/Users/unclebob/projects/FitNesseGit/classes"/>    
     <fileset dir="lib">
       <include name="**/*.jar"/>
     </fileset>

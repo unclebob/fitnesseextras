@@ -4,8 +4,8 @@ import fitnesse.FitNesseContext;
 import fitnesse.http.MockRequest;
 import fitnesse.http.MockResponseSender;
 import fitnesse.http.Response;
-import fitnesse.testutil.RegexTestCase;
-import fitnesse.util.FileUtil;
+import util.RegexTestCase;
+import util.FileUtil;
 
 public class DownloadResponderTest extends RegexTestCase {
   private DownloadResponder responder;

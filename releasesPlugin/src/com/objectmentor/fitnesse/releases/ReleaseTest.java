@@ -1,7 +1,8 @@
 package com.objectmentor.fitnesse.releases;
 
-import fitnesse.testutil.RegexTestCase;
-import fitnesse.util.FileUtil;
+
+import util.RegexTestCase;
+import util.FileUtil;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package com.objectmentor.fitnesse.releases;
 
-import fitnesse.util.FileUtil;
+import util.FileUtil;
 
 import java.io.File;
 import java.io.FileWriter;
